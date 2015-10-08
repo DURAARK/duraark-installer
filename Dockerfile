@@ -13,6 +13,4 @@ COPY ./scripts/deploy-duraark.sh /duraark-system/deploy-duraark.sh
 
 RUN chmod +x /usr/local/bin/docker-compose /duraark-system/deploy-duraark.sh
 
-WORKDIR /duraark-system
-
-CMD ["deploy-duraark.sh"]
+CMD ["/duraark-system/deploy-duraark.sh"]
