@@ -3,7 +3,7 @@ duraark-sessions:
   ports:
     - "5011:5011"
   volumes:
-    - /c/Users/duraark-storage:/duraark-storage
+    - /duraark-storage:/duraark-storage # ONLY DIFFERENCE BETWEEN LINUX AND WINDOWS VERSION!
 
 duraark-metadata:
   image: duraark/duraark-metadata:latest
