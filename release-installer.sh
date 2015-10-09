@@ -13,16 +13,17 @@ echo ""
 echo "Creating image for windows hosts and pushing it to Docker Hub ..."
 echo ""
 
-# 'cp ./docker/docker-compose-windows.yml ./docker/docker-compose-&& dock.yml && docker build -t duraark/duraark-installer-windows ./docker'
+cp ./docker/docker-compose-windows.yml ./docker/docker-compose.yml && docker build -t duraark/duraark-installer-windows ./docker
+docker login && docker push duraark/duraark-installer-windows
 
 echo ""
 echo "Creating image for (non-)windows and pushing it to Docker Hub ..."
 echo ""
 
-# 'cp ./docker/docker-compose-linux ..yml/docker/docker-compose.yml && docker build -t duraark/duraark-installer-linux ./docker'
+# cp ./docker/docker-compose-linux ..yml/docker/docker-compose.yml && docker build -t duraark/duraark-installer-linux ./docker
 
-# 'docker login && docker push duraark/duraark-installer-windows:v0.8.0
-# 'docker push duraark/duraark-installer:v0.8.0
+# docker login && docker push duraark/duraark-installer-windows:v0.8.0
+# docker push duraark/duraark-installer:v0.8.0
 
 echo ""
 echo "Successfully released 'duraark-installer' in version v0.8.0!"
