@@ -9,6 +9,6 @@ del %TEMP%\set-docker-env.bat
 "C:\Program Files\Docker Toolbox\docker.exe" pull duraark/duraark-digitalpreservation
 "C:\Program Files\Docker Toolbox\docker.exe" pull duraark/workbench-ui
 "C:\Program Files\Docker Toolbox\docker.exe" pull duraark/api-gatekeeper
-"C:\Program Files\Docker Toolbox\docker.exe" pull duraark/duraark-system
+"C:\Program Files\Docker Toolbox\docker.exe" pull duraark/duraark-installer-windows
 "C:\Program Files\Docker Toolbox\docker.exe" pull ubo/pc2bim
 "C:\Program Files\Docker Toolbox\docker.exe" pull paulhilbert/e57-metadata
