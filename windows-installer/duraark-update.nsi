@@ -1,5 +1,5 @@
 # define name of installer
-OutFile "duraark-updater.exe"
+OutFile "duraark-update.exe"
 
 # define installation directory
 InstallDir $DESKTOP\duraark-system

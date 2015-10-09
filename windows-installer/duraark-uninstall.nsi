@@ -1,5 +1,5 @@
 # define name of installer
-OutFile "duraark-uninstaller.exe"
+OutFile "duraark-uninstall.exe"
 
 # define installation directory
 InstallDir $DESKTOP\duraark-system

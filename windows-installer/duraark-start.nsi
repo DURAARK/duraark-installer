@@ -1,5 +1,5 @@
 # define name of installer
-OutFile "duraark-reset.exe"
+OutFile "duraark-start.exe"
 
 # define installation directory
 InstallDir $DESKTOP\duraark-system
@@ -14,7 +14,7 @@ Section
     SetOutPath $INSTDIR
 
     File "scripts\start-docker-toolbox.bat"
-    File "scripts\reset-duraark-system.bat"
+    File "scripts\start-duraark-system.bat"
     ExecWait '"$INSTDIR\start-docker-toolbox.bat"'
-    ExecWait '"$INSTDIR\reset-duraark-system.bat"'
+    ExecWait '"$INSTDIR\start-duraark-system.bat"'
 SectionEnd

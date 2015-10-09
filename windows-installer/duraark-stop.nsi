@@ -1,5 +1,5 @@
 # define name of installer
-OutFile "duraark-stopper.exe"
+OutFile "duraark-stop.exe"
 
 # define installation directory
 InstallDir $DESKTOP\duraark-system
