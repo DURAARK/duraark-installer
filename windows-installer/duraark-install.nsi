@@ -9,10 +9,10 @@ RequestExecutionLevel admin
 
 Section
   CreateDirectory "C:\Users\duraark-storage"
-  CreateDirectory "C:\Users\duraark-storage\files"
+  CreateDirectory "C:\Users\duraark-storage\sessions"
 
   AccessControl::GrantOnFile "C:\Users\duraark-storage" "(S-1-5-32-545)" "FullAccess"
-  AccessControl::GrantOnFile "C:\Users\duraark-storage\files" "(S-1-5-32-545)" "FullAccess"
+  AccessControl::GrantOnFile "C:\Users\duraark-storage\sessions" "(S-1-5-32-545)" "FullAccess"
 SectionEnd
 
 RequestExecutionLevel user
