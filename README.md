@@ -6,7 +6,7 @@ The **duraark-installer** - as the name says - installs the [DURAARK System](htt
 
 1. Install [Docker Toolbox](https://www.docker.com/toolbox) as a prerequisite
 2. Download the latest version of the installer [here](https://github.com/DURAARK/duraark-installer/releases) (it is a ZIP file)
-3. Extract the ZIP file and run the **duraark-install** executable. Wait until the installer finishes, which may take several minutes to download the system.
+3. Extract the ZIP file and run the **duraark-install** executable. Wait until the installer finishes, which may take several minutes to download the system, depending on the internet connection. Don't get confused by weird console windows, everything will be fine.
 4. Open **Kitematic** (which should be available on your Desktop after installing [Docker Toolbox](https://www.docker.com/toolbox) in step 1)
 5. You should see something similar to this screenshot:
 
