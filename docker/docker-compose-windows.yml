@@ -38,7 +38,7 @@ workbench-ui:
   ports:
     - "4200:4200"
   environment:
-    - DURAARK_API_ENDPOINT=http://mimas.cgv.tugraz.at
+    - DURAARK_API_ENDPOINT=http://juliet.cgv.tugraz.at
 
 duraark-pointcloud-viewer:
   image: duraark/duraark-pointcloud-viewer:latest
@@ -47,7 +47,7 @@ duraark-pointcloud-viewer:
   volumes:
     - duraark-sessions
     - /var/run/docker.sock:/var/run/docker.sock
-    
+
 web:
   image: duraark/api-gatekeeper:latest
   ports:
