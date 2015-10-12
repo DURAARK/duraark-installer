@@ -1,0 +1,25 @@
+{
+  "name": "duraark-installer",
+  "version": "0.8.0",
+  "description": "Scripts to release an installer image for Windows and Linux on Docker Hub and to create a Windows NSIS installer executable to install the 'duraark-system'.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "./scripts/release-installer.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DURAARK/duraark-installer.git"
+  },
+  "keywords": [
+    "duraark",
+    "installer",
+    "long-term-preservation"
+  ],
+  "author": "Martin Hecher <martin.hecher@fraunhofer.at>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DURAARK/duraark-installer/issues"
+  },
+  "homepage": "https://github.com/DURAARK/duraark-installer#readme"
+}
