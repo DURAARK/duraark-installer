@@ -21,8 +21,6 @@ rem
 call %TEMP%\set-docker-env.bat
 del %TEMP%\set-docker-env.bat
 
-rem "C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" modifyvm default --natpf1 "web,tcp,,8080,,80"
-
 rem
 rem Set basic variables
 rem
@@ -30,7 +28,7 @@ rem
 set DURAARK_HOME=C:\Users\CGV\MartinH\duraark-installer\windows-installer
 set CURL=..\..\bin\curl.exe
 set JQ=..\..\bin\jq-win64.exe
-set HOST=quix
+set HOST=localhost
 
 echo "Creating new session with: %1 | %2 | %3"
 
@@ -74,5 +72,8 @@ rem echo Files: %files%
 echo {"label":"%1", "address":"%2", "description":"%3" ,"files":%files%} > %TEMP%\sessionInput.json
 
 %CURL% -H "Content-Type: application/json" -X POST -d @%TEMP%\sessionInput.json http://%HOST%/api/v0.7/sessions/sessions
+
+del %TEMP%\uploadOutput.json
+del %TEMP%\sessionInput.json
 
 pause
