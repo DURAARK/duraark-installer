@@ -18,6 +18,9 @@ del %TEMP%/set-docker-env.bat
 "C:\Program Files\Docker Toolbox\docker.exe" rm -f duraarkinstaller_duraark-pointcloud-viewer_1
 "C:\Program Files\Docker Toolbox\docker.exe" rm -f duraark-installer-windows
 
+rem Remove probable left-overs from v0.3.0
+"C:\Program Files\Docker Toolbox\docker.exe" rm -f duraark-pc2bim
+
 "C:\Program Files\Docker Toolbox\docker.exe" pull duraark/duraark-sessions
 "C:\Program Files\Docker Toolbox\docker.exe" pull duraark/duraark-metadata
 "C:\Program Files\Docker Toolbox\docker.exe" pull duraark/duraark-sda
