@@ -3,6 +3,7 @@ duraark-sessions:
   ports:
     - "5011:5011"
   volumes:
+    # - /duraark-storage:/duraark-storage
     - /c/Users/duraark-storage:/duraark-storage # ONLY DIFFERENCE BETWEEN LINUX AND WINDOWS VERSION!
 
 duraark-metadata:
@@ -11,11 +12,15 @@ duraark-metadata:
     - "5012:5012"
   volumes_from:
     - duraark-sessions
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
 
 duraark-sda:
   image: duraark/duraark-sda:latest
   ports:
     - "5013:5013"
+  links:
+    - duraark-sdas
 
 duraark-geometricenrichment:
   image: duraark/duraark-geometricenrichment:latest
@@ -25,28 +30,43 @@ duraark-geometricenrichment:
     - duraark-sessions
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
+  environment:
+    # The outside storage path to an environment variable and link this folder into e.g. pc2bim at runtime
+    - DURAARK_STORAGE_PATH=/duraark-storage
 
 duraark-digitalpreservation:
   image: duraark/duraark-digitalpreservation:latest
   ports:
     - "5015:5015"
-  volumes:
+  volumes_from:
     - duraark-sessions
 
-workbench-ui:
-  image: duraark/workbench-ui:latest
+duraark-sdas:
+  image: eccenca/virtuoso7
   ports:
-    - "4200:4200"
-  environment:
-    - DURAARK_API_ENDPOINT=http://localhost
+    - 8890:8890
+    - 1111:1111
+  volumes:
+    - ../virtuoso/db:/var/lib/virtuoso/db
 
 duraark-pointcloud-viewer:
   image: duraark/duraark-pointcloud-viewer:latest
   ports:
     - "5016:5016"
-  volumes:
+  volumes_from:
     - duraark-sessions
+  volumes:
     - /var/run/docker.sock:/var/run/docker.sock
+
+workbench-ui:
+  image: duraark/workbench-ui:latest
+  entrypoint: ember
+  ports:
+    - "4200:4200"
+  environment:
+    - DURAARK_API_ENDPOINT=http://localhost
+  volumes:
+    - ./workbench-ui:/duraark/workbench-ui
 
 web:
   image: duraark/api-gatekeeper:latest
