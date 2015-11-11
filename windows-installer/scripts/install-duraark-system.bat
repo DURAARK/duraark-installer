@@ -34,5 +34,3 @@ rem Remove probable left-overs from v0.3.0
 
 "C:\Program Files\Docker Toolbox\docker.exe" rm -f duraark-installer-windows
 "C:\Program Files\Docker Toolbox\docker.exe" run -d --name duraark-installer-windows -v /var/run/docker.sock:/var/run/docker.sock duraark/duraark-installer-windows
-
-pause
